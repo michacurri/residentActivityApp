@@ -10,7 +10,7 @@ class InputActivityBlock extends Component {
           <div className="activityBackground">
             <AdminCreateActivity />
             {/* created activities  */}
-            {/* <AdminShowActivities /> */}
+            <AdminShowActivities />
           </div>
       </div>
     );
