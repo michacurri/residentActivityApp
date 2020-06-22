@@ -28,6 +28,15 @@ h1 {
   padding: 2% 0;
 }
 
+p {
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+
 
 /* //////////////////////////////// */
 /* COMPONENT: APP */
@@ -55,8 +64,6 @@ h1 {
   width: 100vw;
 
   justify-content: center;
-
-
 }
 
 .adminInputSpotsAvail {
@@ -83,10 +90,10 @@ h1 {
 }
 
 
-/* .adminInputSpotsAvail {
 
-} */
-
+.adminShowActivities ul {
+  height: 50%;
+}
 
 
 /* //////////////////////////////// */
