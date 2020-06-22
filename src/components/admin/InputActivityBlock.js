@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AdminCreateActivity from './AdminCreateActivity'
+import AdminShowActivities from './AdminShowActivities'
 
 class InputActivityBlock extends Component {
   render() {
@@ -8,6 +9,8 @@ class InputActivityBlock extends Component {
         <h1>activity maker</h1>
           <div className="activityBackground">
             <AdminCreateActivity />
+            {/* created activities  */}
+            {/* <AdminShowActivities /> */}
           </div>
       </div>
     );
