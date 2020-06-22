@@ -1,16 +1,17 @@
 // AdminPage.js
-import React, { Component, Fragment } from "react";
-import UserData from './UserData'
+import React, { Component } from "react";
+import InputActivityBlock from "./InputActivityBlock";
+import UserData from "./UserData";
 
 class AdminPage extends Component {
   render() {
     return (
-      <Fragment>
-        {/* <InputActivityBlock />
-        <FormBuilderBlock />
-        <UserDataSelector /> */}
+      <div className="adminPage">
+        <InputActivityBlock />
+        {/* <FormBuilderBlock /> */}
+        {/* <UserDataSelector /> */}
         <UserData />
-      </Fragment>
+      </div>
     );
   }
 }

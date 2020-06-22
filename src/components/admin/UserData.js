@@ -16,8 +16,7 @@ class UserData extends Component {
 
     dbRef.on("value", (response) => {
       const residentData = [];
-      const data = response.val();
-      console.log(data[0]);
+      const data = response.val().userData;
 
       for (let key in data) {
         residentData.push({
@@ -29,7 +28,6 @@ class UserData extends Component {
       this.setState({
         residents: residentData,
       });
-      console.log(residentData);
     });
   }
 
@@ -37,9 +35,9 @@ class UserData extends Component {
     return (
       <div className="residentData">
         <table>
-          {/* <caption>
-                  <h2>Resident Data</h2>
-                </caption> */}
+          <caption>
+            <h2>Resident Data</h2>
+          </caption>
           <thead>
             <tr>
               <th>Suite</th>
@@ -52,20 +50,19 @@ class UserData extends Component {
             </tr>
           </thead>
         </table>
-        {this.state.residents.map((r) => {
-          console.log(r);
+        {this.state.residents.map(({id, resident}) => {
           return (
-            <table>
+            <table key={id}>
               <tbody>
                 <tr>
-                  <th key={r.id}></th>
-                  <td name="suite">{r.resident.suite}</td>
-                  <td name="first">{r.resident.first}</td>
-                  <td name="last">{r.resident.last}</td>
-                  <td name="hasCaregiver">{r.resident.hasCaregiver}</td>
-                  <td name="requiresAssist">{r.resident.requiresAssist}</td>
-                  <td name="mealPreference">{r.resident.mealPreference}</td>
-                  <td name="email">{r.resident.email}</td>
+                  <th></th>
+                  <td name="suite">{resident.suite}</td>
+                  <td name="first">{resident.first}</td>
+                  <td name="last">{resident.last}</td>
+                  <td name="hasCaregiver">{resident.hasCaregiver}</td>
+                  <td name="requiresAssist">{resident.requiresAssist}</td>
+                  <td name="mealPreference">{resident.mealPreference}</td>
+                  <td name="email">{resident.email}</td>
                 </tr>
               </tbody>
             </table>
