@@ -1,17 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./App.css";
 import LoginPage from "./components/LoginPage";
-
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Fragment>
         <LoginPage />
-      </div>
+      </Fragment>
     );
   }
 }
 
 export default App;
-
