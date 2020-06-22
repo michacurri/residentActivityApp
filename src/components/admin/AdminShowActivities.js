@@ -13,31 +13,49 @@ class AdminShowActivities extends Component {
 
   componentDidMount() {
     const dbRef = firebase.database().ref("activities");
-    // console.log(dbRef)
 
     dbRef.on("value", (response) => {
       const newState = [];
       const data = response.val();
-      console.log(data);
 
       for (let key in data) {
         newState.push({
           activity: data[key],
-          id: key,
+          key: key,
         });
-        console.log(newState);
       }
 
       this.setState({
         activities: newState,
       });
-      console.log(this.state.activities);
     });
   }
 
+  deleteActivity = (key) => {
+    const dbRef = firebase.database().ref('activities');
+    dbRef.child(key).remove();
+    console.log("delete pushed");
+  };
+
   render() {
     return (
-    <h1>Created Activities Here</h1>
+    <div className="adminShowActivities">
+          <h2>Created Activities Here</h2>
+          {this.state.activities.map(({ key, activity }) => {
+            return (
+                <ul key={key}>
+                  <li>Name: {activity.activityName}</li>
+                  <li>Date: {activity.activityDate}</li>
+                  <li>Accessible: {activity.activityAccessible}</li>
+                  <li>Meal Included: {activity.activityMeal}</li>
+                  <li>Available Spots: {activity.activitySpotsAvail}</li>
+                  <button onClick={() => {
+                      this.deleteActivity(key);
+                    }}>Delete</button>
+                </ul>
+            );
+          })}
+        </div>
     )
   }
 }

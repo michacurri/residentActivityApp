@@ -15,32 +15,9 @@ class AdminCreateActivity extends Component {
       ActivityMeal: "False",
     };
   }
-  componentDidMount() {
-    const dbRef = firebase.database().ref("activities");
 
-    dbRef.on("value", (response) => {
-      const newState = [];
-      const data = response.val();
-
-      for (let key in data) {
-        newState.push({
-          activity: data[key],
-          key: key,
-        });
-      }
-
-      this.setState({
-        activities: newState,
-      });
-    });
-  }
   handleChange = (event) => {
-    // GOAL of function
-    // tell React to update userInput state
-    // to be equal to whatever user is typing
-
     this.setState({
-      // userInput: event.target.value,
       [event.target.name]: event.target.value,
     });
   };
@@ -58,11 +35,9 @@ class AdminCreateActivity extends Component {
       ActivityMeal: this.state.ActivityMeal,
     };
 
-    // using the FIREBASE push method (not a JavaScript push)
     dbRef.push(newActivities);
-    console.log(newActivities);
 
-    // clear the userInput
+    // clear the inputs
     this.setState({
       activityName: "",
       activityDate: {},
@@ -71,6 +46,7 @@ class AdminCreateActivity extends Component {
       ActivityMeal: "False",
     });
   };
+
 
   render() {
     return (
@@ -133,21 +109,6 @@ class AdminCreateActivity extends Component {
             Add Activity to the Calendar
           </button>
         </form>
-
-        <div className="adminShowActivities">
-          <h2>Created Activities Here</h2>
-          {this.state.activities.map(({ key, activity }) => {
-            return (
-              <ul key={key}>
-                <li>Name: {activity.activityName}</li>
-                <li>Date: {activity.activityDate}</li>
-                <li>Accessible: {activity.activityAccessible}</li>
-                <li>Meal Included: {activity.activityMeal}</li>
-                <li>Available Spots: {activity.activitySpotsAvail}</li>
-              </ul>
-            );
-          })}
-        </div>
       </Fragment>
     );
   }
