@@ -94,7 +94,7 @@ class AdminCreateActivity extends Component {
           <label htmlFor="ActivityMeal">Is a meal included?</label>
           <br />
 
-          <label htmlFor="activitySpots">Space Available</label>
+          <label htmlFor="activitySpotsAvail">Space Available</label>
           <br />
           <input
             type="number"
