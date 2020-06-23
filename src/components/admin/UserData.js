@@ -12,11 +12,11 @@ class UserData extends Component {
   }
 
   componentDidMount() {
-    const dbRef = firebase.database().ref();
+    const dbRef = firebase.database().ref("userData");
 
     dbRef.on("value", (response) => {
       const residentData = [];
-      const data = response.val().userData;
+      const data = response.val();
 
       for (let key in data) {
         residentData.push({
