@@ -59,10 +59,11 @@ class UserData extends Component {
                   <td name="suite">{resident.suite}</td>
                   <td name="first">{resident.first}</td>
                   <td name="last">{resident.last}</td>
-                  <td name="hasCaregiver">{resident.hasCaregiver}</td>
-                  <td name="requiresAssist">{resident.requiresAssist}</td>
+                  <td name="hasCaregiver">{String(resident.hasCaregiver)}</td>
+                  <td name="requiresAssist">{String(resident.requiresAssist)}</td>
                   <td name="mealPreference">{resident.mealPreference}</td>
                   <td name="email">{resident.email}</td>
+                 
                 </tr>
               </tbody>
             </table>
