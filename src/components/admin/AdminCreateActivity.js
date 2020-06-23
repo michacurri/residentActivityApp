@@ -11,9 +11,11 @@ class AdminCreateActivity extends Component {
       activityName: "",
       activitySpotsAvail: 0,
       activityDate: {},
-      activityAccessible: "False",
-      ActivityMeal: "False",
+      activityAccessible: false,
+      ActivityMeal: false,
     };
+
+    // this.handleChecked = this.handleChecked.bind(this);
   }
 
   handleChange = (event) => {
@@ -21,6 +23,15 @@ class AdminCreateActivity extends Component {
       [event.target.name]: event.target.value,
     });
   };
+
+  // handle CHECKBOXES
+  handleChecked = (event) => {
+    this.setState({
+      [event.target.checked]: !event.target.checked,
+    })
+    console.log(event.target.checked);    
+  }
+
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -42,8 +53,8 @@ class AdminCreateActivity extends Component {
       activityName: "",
       activityDate: {},
       activitySpotsAvail: 0,
-      activityAccessible: "False",
-      ActivityMeal: "False",
+      activityAccessible: false,
+      ActivityMeal: false,
     });
   };
 
@@ -75,7 +86,7 @@ class AdminCreateActivity extends Component {
           <input
             type="checkbox"
             value={this.state.activityAccessible}
-            onChange={this.handleChange}
+            onChange={this.handleChecked}
             name="activityAccessible"
             id="activityAccessible"
           />
@@ -87,7 +98,7 @@ class AdminCreateActivity extends Component {
           <input
             type="checkbox"
             value={this.state.ActivityMeal}
-            onChange={this.handleChange}
+            onChange={this.handleChecked}
             name="ActivityMeal"
             id="ActivityMeal"
           />
