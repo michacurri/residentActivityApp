@@ -1,13 +1,13 @@
 // LoginPage.js
 import React, { Component } from "react";
-// import AdminPage from "./admin/AdminPage";
-import AdminLoginButton from "./login/AdminLoginButton";
+import AdminPage from "./admin/AdminPage";
+// import AdminLoginButton from "./login/AdminLoginButton";
 import UserPage from "./user/UserPage";
-import UserLoginButton from "./login/UserLoginButton";
+// import UserLoginButton from "./login/UserLoginButton";
 
 class LoginPage extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       AdminPage: false,
       UserPage: false,
@@ -15,22 +15,34 @@ class LoginPage extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick = (props) => {
-    console.log(props);
-    
+  handleClick() {
     this.setState({
       AdminPage: this.state.AdminPage ? false : true,
       UserPage: this.state.UserPage ? false : true,
     });
-  };
+  }
   render() {
-    // if the state of admin menu is true, render it, otherwise (null)
     return (
       <div className="loginButtons">
-        <AdminLoginButton />
-        
+        <button
+          name="AdminPage"
+          value={this.state.AdminPage}
+          onClick={this.handleClick}
+        >
+          Admin
+        </button>
+        {this.state.AdminPage ? <AdminPage /> : null}
 
-        <UserLoginButton />
+        <button
+          name="UserPage"
+          value={this.state.UserPage}
+          onClick={this.handleClick}
+        >
+          User
+        </button>
+
+        {/* <AdminLoginButton handleClick={this.handleClick} />
+        <UserLoginButton /> */}
         {this.state.UserPage ? <UserPage /> : null}
       </div>
     );
