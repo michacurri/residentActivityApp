@@ -61,7 +61,8 @@ class AdminCreateActivity extends Component {
 
   render() {
     return (
-      <Fragment>
+      <div className="adminInputActivityForm">
+        <h3>activity maker</h3>
         <form>
           <label htmlFor="activityName">Activity Name</label>
           <br />
@@ -120,7 +121,7 @@ class AdminCreateActivity extends Component {
             Add Activity to the Calendar
           </button>
         </form>
-      </Fragment>
+      </div>
     );
   }
 }

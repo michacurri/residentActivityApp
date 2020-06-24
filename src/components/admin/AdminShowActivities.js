@@ -40,7 +40,7 @@ class AdminShowActivities extends Component {
   render() {
     return (
     <div className="adminShowActivities">
-          <h2>Created Activities Here</h2>
+          <h3>Created Activities Here</h3>
           {this.state.activities.map(({ key, activity }) => {
             return (
                 <ul key={key}>

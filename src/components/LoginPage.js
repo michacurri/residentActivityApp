@@ -1,5 +1,5 @@
 // LoginPage.js
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import AdminPage from "./admin/AdminPage";
 // import AdminLoginButton from "./login/AdminLoginButton";
 import UserPage from "./user/UserPage";
@@ -23,28 +23,26 @@ class LoginPage extends Component {
   }
   render() {
     return (
-      <div className="loginButtons">
+      <Fragment>
         <button
-          name="AdminPage"
+          name="AdminButton"
           value={this.state.AdminPage}
           onClick={this.handleClick}
         >
           Admin
         </button>
-        {this.state.AdminPage ? <AdminPage /> : null}
-
         <button
-          name="UserPage"
+          name="UserButton"
           value={this.state.UserPage}
           onClick={this.handleClick}
         >
           User
         </button>
-
         {/* <AdminLoginButton handleClick={this.handleClick} />
         <UserLoginButton /> */}
+        {this.state.AdminPage ? <AdminPage /> : null}
         {this.state.UserPage ? <UserPage /> : null}
-      </div>
+      </Fragment>
     );
   }
 }
