@@ -1,15 +1,16 @@
 // AdminPage.js
 import React, { Component } from "react";
-import InputActivityBlock from "./InputActivityBlock";
+import AdminCreateActivity from "./AdminCreateActivity";
+import AdminShowActivities from "./AdminShowActivities"
 import UserData from "./UserData";
 
 class AdminPage extends Component {
   render() {
     return (
       <div className="adminPage">
-        <InputActivityBlock />
-        {/* <FormBuilderBlock /> */}
-        {/* <UserDataSelector /> */}
+        <h2>ADMIN</h2>
+        <AdminCreateActivity />
+        <AdminShowActivities />
         <UserData />
       </div>
     );
