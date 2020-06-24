@@ -12,7 +12,8 @@ class AdminCreateActivity extends Component {
       activitySpotsAvail: 0,
       activityDate: {},
       activityAccessible: false,
-      ActivityMeal: false,
+      activityMeal: false,
+      activityDescription: "",
     };
 
     // this.handleChecked = this.handleChecked.bind(this);
@@ -27,15 +28,12 @@ class AdminCreateActivity extends Component {
   // handle CHECKBOXES
   handleChecked = (event) => {
     this.setState({
-      [event.target.checked]: !event.target.checked,
-    })
-    console.log(event.target.checked);    
+      [event.target.id]: String(event.target.checked),
+    })       
   }
-
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // get another locally scoped dbRef
     const dbRef = firebase.database().ref("activities");
 
     const newActivities = {
@@ -43,7 +41,8 @@ class AdminCreateActivity extends Component {
       activityDate: this.state.activityDate,
       activitySpotsAvail: this.state.activitySpotsAvail,
       activityAccessible: this.state.activityAccessible,
-      ActivityMeal: this.state.ActivityMeal,
+      activityMeal: this.state.activityMeal,
+      activityDescription: this.state.activityDescription,
     };
 
     dbRef.push(newActivities);
@@ -54,7 +53,8 @@ class AdminCreateActivity extends Component {
       activityDate: {},
       activitySpotsAvail: 0,
       activityAccessible: false,
-      ActivityMeal: false,
+      activityMeal: false,
+      activityDescription: "",
     });
   };
 
@@ -74,6 +74,7 @@ class AdminCreateActivity extends Component {
             id="activityName"
           />
           <br />
+
           <label htmlFor="activityDate">Date of Activity</label>
           <br />
           <input
@@ -84,6 +85,24 @@ class AdminCreateActivity extends Component {
             id="activityDate"
           />
           <br />
+          <label htmlFor="activityDescription">
+            Description of the Activity
+          </label>
+          <input 
+          type="textarea"
+          maxLength="140"
+          rows="5"
+          placeholder="Enjoy an elegant evening out with the Toronto Symphony Orchestra..."
+          value={this.state.activityDescription}
+          onChange={this.handleChange}
+          name="activityDescription"
+          id="activityDescription"
+          />
+          <br />
+
+          <label htmlFor="activityAccessible">
+            Is this activity accessible?
+          </label>
           <input
             type="checkbox"
             value={this.state.activityAccessible}
@@ -91,19 +110,16 @@ class AdminCreateActivity extends Component {
             name="activityAccessible"
             id="activityAccessible"
           />
-          <label htmlFor="activityAccessible">
-            Is this activity accessible?
-          </label>
           <br />
 
+          <label htmlFor="activityMeal">Is a meal included?</label>
           <input
             type="checkbox"
-            value={this.state.ActivityMeal}
+            value={this.state.activityMeal}
             onChange={this.handleChecked}
-            name="ActivityMeal"
-            id="ActivityMeal"
+            name="activityMeal"
+            id="activityMeal"
           />
-          <label htmlFor="ActivityMeal">Is a meal included?</label>
           <br />
 
           <label htmlFor="activitySpotsAvail">Space Available</label>
@@ -117,6 +133,7 @@ class AdminCreateActivity extends Component {
             placeholder="#"
           />
           <br />
+
           <button onClick={this.handleSubmit}>
             Add Activity to the Calendar
           </button>

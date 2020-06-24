@@ -39,6 +39,7 @@ class UserShowActivities extends Component {
             <div key={key} className="userShowActivities">
               <h3 className="userLiName">{activity.activityName}</h3>
               <h4 className="userLiDate">Date: {activity.activityDate}</h4>
+              <h5 className="activityDescription">{activity.activityDescription}</h5>
               <h5 className="userLiAccs">
                 Accessible: {activity.activityAccessible ? <h5>Yes</h5> : <h5>No</h5>}
               </h5>

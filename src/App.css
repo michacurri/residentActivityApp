@@ -104,6 +104,8 @@ textarea {
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
+  resize: none;
+  overflow: hidden;
 }
 button,
 input {
@@ -326,6 +328,12 @@ button {
 .adminInputActivityForm input {
   text-align: center;
   margin: 0 10%;
+}
+
+.adminInputActivityForm textarea {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.6rem;
 }
 
 .adminInputActivityForm button {
