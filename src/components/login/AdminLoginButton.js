@@ -1,20 +1,34 @@
 // AdminLoginButton.js
 
-import React from "react";
+import React, { Component } from "react";
 // import AdminPage from "../admin/AdminPage";
 
-const AdminLoginButton = (props) => {
-  console.log(props);
-  
-  {props.state.AdminPage ? <AdminPage /> : null}
-  return (
-    <button
-      name="adminButton"
-      onClick={props.handleClick}
-    >
-      Admin
-    </button>
-  );
-};
+class AdminLoginButton extends Component {
+  constructor() {
+    super();
+    this.state = {
+      AdminPage: adminPage,
+    };
+  }
+
+  handleClick() {
+    this.setState({
+      AdminPage: this.state.AdminPage ? false : true,
+    });
+  }
+  render() {
+    return (
+      <button
+        name="AdminPage"
+        value={this.state.AdminPage}
+        onClick={() => {
+          this.handleClick;
+        }}
+      >
+        Admin
+      </button>
+    );
+  }
+}
 
 export default AdminLoginButton;
