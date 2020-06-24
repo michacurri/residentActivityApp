@@ -1,6 +1,6 @@
 // AdminCreateActivity.js
 
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import firebase from "../../firebase";
 
 class AdminCreateActivity extends Component {
