@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2b613abb450e0c8a66033e2a0a6eeaf8",
+    "revision": "cd49364ad26cb462f68151a6e95c05cc",
     "url": "/residentActivityApp/index.html"
   },
   {
-    "revision": "74b2d6504de1b2a2b290",
+    "revision": "4ca2b5e6d6e32ca5a550",
     "url": "/residentActivityApp/static/css/main.84418e71.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/residentActivityApp/static/js/2.0967a869.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "74b2d6504de1b2a2b290",
-    "url": "/residentActivityApp/static/js/main.e24e5907.chunk.js"
+    "revision": "4ca2b5e6d6e32ca5a550",
+    "url": "/residentActivityApp/static/js/main.470e33e5.chunk.js"
   },
   {
     "revision": "e35a8ff372108e1a9204",
