@@ -7,7 +7,7 @@ class UserPage extends Component {
   render() {
     return (
       <div className="userPage">
-        <h2>UserPage</h2>
+        <h2>USER</h2>
         <UserShowActivities />
         {/* <ActivityOptionsBlock /> */}
         {/* <UserResponseInput /> */}

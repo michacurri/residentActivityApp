@@ -88,7 +88,7 @@ class AdminCreateActivity extends Component {
           <label htmlFor="activityDescription">
             Description of the Activity
           </label>
-          <input 
+          <textarea 
           type="textarea"
           maxLength="140"
           rows="5"

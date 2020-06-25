@@ -19,22 +19,25 @@ class LoginPage extends Component {
   handleAdminClick() {
     this.setState({
       AdminPage: this.state.AdminPage ? false : true,
-      UserPage:  false 
+      UserPage: false,
     });
   }
- 
+
   handleUserClick() {
     this.setState({
       UserPage: this.state.UserPage ? false : true,
-      AdminPage:  false 
+      AdminPage: false,
     });
   }
 
   render() {
     return (
       <Fragment>
-        <AdminLoginButton handleAdminClick={this.handleAdminClick} />
-        <UserLoginButton handleUserClick={this.handleUserClick} />
+        <div className="navBar">
+          <h1>Resident Activity App</h1>
+          <AdminLoginButton handleAdminClick={this.handleAdminClick} />
+          <UserLoginButton handleUserClick={this.handleUserClick} />
+        </div>
         {this.state.AdminPage ? <AdminPage /> : null}
         {this.state.UserPage ? <UserPage /> : null}
       </Fragment>
