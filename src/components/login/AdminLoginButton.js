@@ -8,6 +8,7 @@ class AdminLoginButton extends Component {
     return (
       <button
         name="AdminPage"
+        className="navButton"
         onClick={this.props.handleAdminClick}
       >
         Admin

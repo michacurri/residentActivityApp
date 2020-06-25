@@ -7,6 +7,7 @@ class UserLoginButton extends Component {
     return (
       <button
         name="UserButton"
+        className="navButton"
         onClick={this.props.handleUserClick}
       >
         User
