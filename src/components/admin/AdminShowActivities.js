@@ -2,7 +2,6 @@
 
 import React, { Component } from "react";
 import firebase from "../../firebase";
-import AdminCalendar from './AdminCalendar'
 
 class AdminShowActivities extends Component {
   constructor() {
@@ -41,15 +40,12 @@ class AdminShowActivities extends Component {
   render() {
     return (
     <div className="adminShowActivities">
-          <AdminCalendar />
           {this.state.activities.map(({ key, activity }) => {
             return (
-                <ul key={key}>
+                <ul key={key} 
+                className="adminListActivities">
                   <li>Name: {activity.activityName}</li>
                   <li>Date: {activity.activityDate}</li>
-                  <li>Accessible: {activity.activityAccessible}</li>
-                  <li>Meal Included: {activity.activityMeal}</li>
-                  <li>Available Spots: {activity.activitySpotsAvail}</li>
                   <button onClick={() => {
                       this.deleteActivity(key);
                     }}>Delete</button>

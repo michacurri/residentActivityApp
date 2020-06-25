@@ -244,8 +244,6 @@ p {
 
 h1 {
   font-size: 5vw;
-  margin: 0;
-  padding: 2% 0;
   text-align: center;
 }
 
@@ -304,7 +302,6 @@ ul {
 
 button {
   font-size: 1.6rem;
-  padding: 3%;
 }
 
 /* //////////////////////////////// */
@@ -315,7 +312,22 @@ button {
   height: 20vh;
   background-color: #122342;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 12rem;
+}
+
+.navBar h1 {
+  margin-left: 2rem;
+  width: 100%;
+  font-size: 3rem;
+  margin: 1%;
+}
+
+.buttonBar {
+  display: flex;
+  justify-content: center;;
 }
 
 .navButton {
@@ -326,10 +338,17 @@ button {
 	cursor:pointer;
 	color:#ffffff;
   text-decoration:none;
-  margin: 2%;
   font-size: 2rem;
   text-transform: uppercase;
+	height: 30%;
+  width: 10%;
+  min-width: 8rem;
+  min-height: 4rem;
+  margin: 2%;
+  margin-right: 0;
+  border-radius: 5px;
 }
+
 .navButton:hover {
 	background:linear-gradient(to bottom, #3c75db 5%, #637aad 100%);
 	background-color:#5972a7;
@@ -363,12 +382,10 @@ button {
   align-items: center;
   grid-row: 2;
   grid-column: 1;
-  /* height: 60vh; */
   width: 100vw;
   grid-template-rows: 0.1fr 1fr;
   text-align: center;
   background-color: #3c75db;
-  margin: 0 4%;
 }
 
 .adminInputActivityForm form {
@@ -390,6 +407,10 @@ button {
 
 .adminInputActivityForm button {
   margin: 2% 10%;
+  margin-top: 10%;
+  background-color: #904ca3;
+  color: white;
+  padding: 5%;
 }
 
 .adminInputActivityForm h3 {
@@ -427,6 +448,22 @@ button {
 .adminShowActivities h3 {
   grid-row: 1;
   grid-column: 1 / -1;
+}
+
+.adminListActivities {
+  background-color: #904ca3;
+  margin: 5%;
+  color: white;
+  border-radius: 10px;
+  padding: 10% 5%;
+}
+
+.adminListActivities button {
+  width: 100%;
+  margin-top: 10%;
+  background-color: #3c75db;
+  color: white;
+  padding: 5%;
 }
 
 /* //////////////////////////////// */
@@ -549,15 +586,16 @@ tbody td {
 
   .adminInputActivityForm {
     width: 100%;
-    min-width: 30vw;
+    min-width: 25vw;
     max-height: 80%;
+    max-width: 28vw;
   }
 
   .adminShowActivities {
     width: 100%;
     min-width: 68vw;
     max-height: 80%;
-    grid-template-rows: 0.1fr repeat(1fr);
+    grid-template-rows: 0.1fr repeat(4, 1fr);
     grid-template-columns: repeat(4, 1fr);
     grid-row: 2;
     grid-column: 2;
@@ -569,6 +607,36 @@ tbody td {
   .residentData {
     grid-row: 3;
     grid-column: 1 / -1;
+  }
+
+  .navBar {
+    width: 100vw;
+    height: 20vh;
+    background-color: #122342;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10rem;
+  }
+  
+  .navBar h1 {
+    margin-left: 2rem;
+    font-size: 5vw;
+    padding: 2% 0;
+  }
+  
+  .buttonBar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navButton {
+    margin-right: 3rem;
+  }
+
+  .adminInputActivityForm {
+    margin: 0 4%;
   }
 
   /* //////////////////////////////// */

@@ -15,8 +15,6 @@ class AdminCreateActivity extends Component {
       activityMeal: false,
       activityDescription: "",
     };
-
-    // this.handleChecked = this.handleChecked.bind(this);
   }
 
   handleChange = (event) => {

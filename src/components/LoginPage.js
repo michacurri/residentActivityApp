@@ -35,8 +35,10 @@ class LoginPage extends Component {
       <Fragment>
         <div className="navBar">
           <h1>Resident Activity App</h1>
-          <AdminLoginButton handleAdminClick={this.handleAdminClick} />
-          <UserLoginButton handleUserClick={this.handleUserClick} />
+          <div className="buttonBar">
+            <AdminLoginButton handleAdminClick={this.handleAdminClick} />
+            <UserLoginButton handleUserClick={this.handleUserClick} />
+          </div>
         </div>
         {this.state.AdminPage ? <AdminPage /> : null}
         {this.state.UserPage ? <UserPage /> : null}
